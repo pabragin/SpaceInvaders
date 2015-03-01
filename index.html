@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Space invaders</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="js/Game.js"></script>
+        <script src="js/Gamefield.js"></script>
+        <script src="js/Ship.js"></script>
+        <script src="js/Fire.js"></script>
+        <script src="js/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+        <div class="gamefield">
+            <canvas class="gamecanvas"></canvas>
+            <script type="text/javascript">
+                var canvas = $(".gamecanvas")[0];
+                var spaceInvaders = new Game(canvas);
+                $(document).keydown(function(e) {
+                    switch(e.which) {
+                        case 37: // left
+                            spaceInvaders.moveShipLeft();
+                            break;
+                        case 39: // right
+                            spaceInvaders.moveShipRight();
+                            break;
+                        case 32: // space
+                            spaceInvaders.shipFire();
+                            break;
+                        default: return; // exit this handler for other keys
+                    }
+                    e.preventDefault(); // prevent the default action (scroll / move caret)
+                });
+                spaceInvaders.start();
+            </script>
+        </div>
+    </body>
+</html>
