@@ -2,7 +2,7 @@ function Game(gameCanvas)//game constructor
 {
     var gameField = new Gamefield(gameCanvas);
     var ship = new Ship((gameCanvas.width/2), gameCanvas.height-10);
-    var fireArr = [];
+    var fireArr=[];
     var config = {
         fps: 30,
         fireSpeed: 3,
