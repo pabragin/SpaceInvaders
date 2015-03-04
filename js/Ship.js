@@ -7,17 +7,17 @@ function Ship(xx,yy)//constructor of the ship
     {
         x = xx;
         y = yy;
-    }
+    };
 
     this.getX = function()
     {
         return x;
-    }
+    };
 
     this.getY = function()
     {
         return y;
-    }
+    };
 
     this.getXY = function()
     {
