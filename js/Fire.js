@@ -14,10 +14,6 @@ function Fire(startX, startY, speedF)
     {
         return y;
     };
-    this.getXY = function()
-    {
-        return [x,y];
-    };
     this.isBang = function()
     {
         return bang;

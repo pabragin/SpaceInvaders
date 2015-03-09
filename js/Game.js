@@ -1,7 +1,7 @@
 function Game(gameCanvas)//game constructor
 {
     var gameField = new Gamefield(gameCanvas);
-    var ship = new Ship((gameCanvas.width/2), gameCanvas.height-10);
+    var ship = new Ship((gameCanvas.width/2), gameCanvas.height-24);
     var fireArr=[];
     var enemyArr=[];
     var config = {
@@ -90,11 +90,10 @@ function Game(gameCanvas)//game constructor
 
     this.start = function ()//start main loop
     {
-        setInterval(function(){gameField.redraw(ship.getXY(), fireArr, enemyArr)}, 1000/config.fps);
+        setInterval(function(){gameField.redraw(ship, fireArr, enemyArr)}, 1000/config.fps);
         setInterval(function(){moveAllFires()}, 1000/config.fps);
         setInterval(function(){moveAllEnemy()}, 1000/config.fps);
         setInterval(function(){shipFire()}, config.fireDelay);
         setInterval(function(){generateNewEnemy(getRandomInt(0,gameCanvas.width),0)}, 1000);
-        setInterval(function(){console.log("fire: "+fireArr.length.toString()+" Enemy:"+enemyArr.length.toString())}, 1000);
     };
 }

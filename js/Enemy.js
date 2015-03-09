@@ -5,8 +5,8 @@ function Enemy(xx,yy,speedF)//constructor of the enemy
     var speed=speedF;
     var bang=false;
     var out = false;
-    var sizeX=10;
-    var sizeY=8;
+    var sizeX=40;
+    var sizeY=24;
 
     this.step = function ()//step enemy to x,y
     {
@@ -21,11 +21,6 @@ function Enemy(xx,yy,speedF)//constructor of the enemy
     this.getY = function()
     {
         return y;
-    };
-
-    this.getXY = function()
-    {
-        return [x,y];
     };
 
     this.getSizeX = function()

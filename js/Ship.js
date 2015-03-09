@@ -2,8 +2,8 @@ function Ship(xx,yy)//constructor of the ship
 {
     var x = xx;
     var y = yy;
-    var sizeX=10;
-    var sizeY=8;
+    var sizeX=40;
+    var sizeY=24;
 
     this.move = function (xx, yy)//move ship to x,y
     {
@@ -30,9 +30,4 @@ function Ship(xx,yy)//constructor of the ship
     {
         return sizeY;
     };
-
-    this.getXY = function()
-    {
-        return [x,y];
-    }
 }
