@@ -1,23 +1,43 @@
-function Fire(startX, startY, speedF)
+function Enemy(xx,yy,speedF)//constructor of the enemy
 {
-    var x=startX;
-    var y=startY;
+    var x = xx;
+    var y = yy;
     var speed=speedF;
     var bang=false;
-    var out=false;
+    var out = false;
+    var sizeX=10;
+    var sizeY=8;
+
+    this.step = function ()//step enemy to x,y
+    {
+        y = y+speed;
+    };
 
     this.getX = function()
     {
         return x;
     };
+
     this.getY = function()
     {
         return y;
     };
+
     this.getXY = function()
     {
         return [x,y];
     };
+
+    this.getSizeX = function()
+    {
+        return sizeX;
+    };
+
+    this.getSizeY = function()
+    {
+        return sizeY;
+    };
+
     this.isBang = function()
     {
         return bang;
@@ -26,6 +46,7 @@ function Fire(startX, startY, speedF)
     {
         bang=true;
     };
+
     this.isOut = function()
     {
         return out;
@@ -33,14 +54,5 @@ function Fire(startX, startY, speedF)
     this.setOut = function()
     {
         out=true;
-    };
-    this.moveShipFire = function()
-    {
-        if (y - speed > -1) {
-            y -= speed;
-        }
-        else {
-            out = true;
-        }
     };
 }

@@ -16,10 +16,19 @@ function Gamefield(gameCanvasIn)//game field constructor
         }
     };
 
-    this.redraw = function (shipxy, fireArr)//redraw game field
+    var drawEnemy = function (enemyArr)//draw enemy on game field
+    {
+        gameCanvas.fillStyle = "blue";
+        for(var i=0; i<enemyArr.length;i++) {
+            gameCanvas.fillRect(enemyArr[i].getX()-enemyArr[i].getSizeX()/2, enemyArr[i].getY(), enemyArr[i].getSizeX(), enemyArr[i].getSizeY());
+        }
+    };
+
+    this.redraw = function (shipxy, fireArr, enemyArr)//redraw game field
     {
         gameCanvas.clearRect(0, 0, gameCanvasIn.width, gameCanvasIn.height);
         drawShip(shipxy);
         drawFire(fireArr);
+        drawEnemy(enemyArr);
     };
 }
