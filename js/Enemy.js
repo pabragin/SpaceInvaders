@@ -1,53 +1,44 @@
-function Enemy(xx,yy,speedF)//constructor of the enemy
-{
-    var x = xx;
-    var y = yy;
-    var speed=speedF;
-    var bang=false;
-    var out = false;
-    var sizeX=40;
-    var sizeY=24;
+function Enemy(xx, yy, speedF) {//constructor of the enemy
+    "use strict";
+    var x = xx,
+        y = yy,
+        speed = speedF,
+        bang = false,
+        out = false,
+        sizeX = 40,
+        sizeY = 24;
 
-    this.step = function ()//step enemy to x,y
-    {
-        y = y+speed;
+    this.step = function () {//step enemy to x,y
+        y = y + speed;
     };
 
-    this.getX = function()
-    {
+    this.getX = function () {
         return x;
     };
 
-    this.getY = function()
-    {
+    this.getY = function () {
         return y;
     };
 
-    this.getSizeX = function()
-    {
+    this.getSizeX = function () {
         return sizeX;
     };
 
-    this.getSizeY = function()
-    {
+    this.getSizeY = function () {
         return sizeY;
     };
 
-    this.isBang = function()
-    {
+    this.isBang = function () {
         return bang;
     };
-    this.setBang = function()
-    {
-        bang=true;
+    this.setBang = function () {
+        bang = true;
     };
 
-    this.isOut = function()
-    {
+    this.isOut = function () {
         return out;
     };
-    this.setOut = function()
-    {
-        out=true;
+    this.setOut = function () {
+        out = true;
     };
 }

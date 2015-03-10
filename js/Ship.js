@@ -1,33 +1,28 @@
-function Ship(xx,yy)//constructor of the ship
-{
-    var x = xx;
-    var y = yy;
-    var sizeX=40;
-    var sizeY=24;
+function Ship(xx, yy) {//constructor of the ship
+    "use strict";
+    var x = xx,
+        y = yy,
+        sizeX = 40,
+        sizeY = 24;
 
-    this.move = function (xx, yy)//move ship to x,y
-    {
+    this.move = function (xx, yy) {//move ship to x,y
         x = xx;
         y = yy;
     };
 
-    this.getX = function()
-    {
+    this.getX = function () {
         return x;
     };
 
-    this.getY = function()
-    {
+    this.getY = function () {
         return y;
     };
 
-    this.getSizeX = function()
-    {
+    this.getSizeX = function () {
         return sizeX;
     };
 
-    this.getSizeY = function()
-    {
+    this.getSizeY = function () {
         return sizeY;
     };
 }
