@@ -6,7 +6,7 @@ function Enemy(xx, yy, speedF) {//constructor of the enemy
         bang = false,
         out = false,
         sizeX = 40,
-        sizeY = 24;
+        sizeY = 35;
 
     this.step = function () {//step enemy to x,y
         y = y + speed;

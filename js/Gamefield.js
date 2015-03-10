@@ -5,8 +5,8 @@ function Gamefield(gameCanvasIn) {//game field constructor
         enemyImg = new Image(),
         shipImg = new Image();
     gameCanvas.scale(1, 1);
-    enemyImg.src = 'img/Enemy.svg';
-    shipImg.src = 'img/Ship.svg';
+    enemyImg.src = 'img/Enemy7.png';
+    shipImg.src = 'img/Ship2.svg';
 
     function drawShip(ship) {//draw ship on game field
         gameCanvas.drawImage(shipImg, ship.getX() - ship.getSizeX() / 2, ship.getY(), ship.getSizeX(), ship.getSizeY());
@@ -29,6 +29,8 @@ function Gamefield(gameCanvasIn) {//game field constructor
 
     this.redraw = function (ship, fireArr, enemyArr) {//redraw game field
         gameCanvas.clearRect(0, 0, gameCanvasIn.width, gameCanvasIn.height);
+		gameCanvas.fillStyle = "black";
+		gameCanvas.fillRect(0, 0, gameCanvasIn.width, gameCanvasIn.height);
         drawShip(ship);
         drawFire(fireArr);
         drawEnemy(enemyArr);
